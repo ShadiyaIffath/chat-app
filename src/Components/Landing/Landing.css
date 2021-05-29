@@ -1,0 +1,117 @@
+.content-container {
+  width: 45%;
+  background-color: #ad538988;
+  justify-content: center;
+  position: absolute;
+  top: 15%;
+  left: 28%;
+  padding: 4%;
+  transition: 500ms linear;
+}
+
+.content-container h1 {
+  text-align: center;
+  font-family: "Lucida Bright";
+}
+
+.content-container h3 {
+  text-align: center;
+  font-family: "Lucida Bright";
+  font-weight: 300;
+}
+
+.content-container:hover {
+  transform: scale(1.1);
+}
+
+.logo-img {
+  width: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-row {
+  margin-top: 5%;
+}
+
+.login-btn {
+  align-self: flex-start;
+  color: #fff;
+  background-color: #3c1053;
+  margin-right: 5%;
+}
+
+.login-btn:hover {
+  color: #fff;
+  background-color: #3c1053;
+}
+
+.reg-btn {
+  background-color: #fff;
+  color: #ad5389;
+  align-self: flex-end;
+}
+
+.reg-btn:hover {
+  background-color: #ad538988;
+  color: #3c1053;
+}
+
+.btn:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 0;
+}
+
+@media (max-width: 768px) {
+  .btn {
+    font-size: 11px;
+    padding: 4px 6px;
+  }
+  .h1 {
+    font-size: 22px;
+  }
+  .h3 {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .h1 {
+    font-size: 25px;
+  }
+  .h3 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .h1 {
+    font-size: 27px;
+  }
+  .h3 {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .btn {
+    padding: 10px 16px;
+    font-size: 18px;
+  }
+  .h1 {
+    font-size: 30px;
+  }
+  .h3 {
+    font-size: 25px;
+  }
+}

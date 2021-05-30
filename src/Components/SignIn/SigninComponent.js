@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import ParticlesComponent from "../ParticlesComponent";
+import { useHistory, useLocation } from "react-router";
 import "../Authorize/Authorize.css";
-import AuthorizeComponent from "../Authorize/AuthorizeComponent";
+import LogoComponent from "../Authorize/LogoComponent";
+import ParticlesComponent from "../ParticlesComponent";
 
 function SigninComponent() {
+  const location = useLocation();
+  const { home } = location.state;
+  const history = useHistory();
   const [loginDetails, setDetails] = useState({
     email: "",
     password: "",
@@ -12,6 +16,10 @@ function SigninComponent() {
   const submitHandler = (e) => {
     e.preventDefault();
   };
+
+  const navigationHandler = () =>
+    history.push({ pathname: "/signUp", state: { home: false } });
+
   return (
     <>
       <ParticlesComponent />
@@ -19,7 +27,7 @@ function SigninComponent() {
         <div className="container shadow">
           <div className="row">
             <div className="col">
-              <div className="card box shadow">
+              <div className={"card box shadow " + (!home ? "fadeIn" : "")}>
                 <form onSubmit={submitHandler}>
                   <div className="form-inner">
                     <h1 className="h1">SignIn</h1>
@@ -63,7 +71,11 @@ function SigninComponent() {
               </div>
             </div>
             <div className="col">
-              <AuthorizeComponent login={true} />
+              <LogoComponent
+                login={true}
+                navigation={navigationHandler}
+                isHome={home}
+              />
             </div>
           </div>
         </div>

@@ -40,11 +40,13 @@
   color: #fff;
   background-color: #3c1053;
   margin-right: 5%;
+  transition: 500ms linear;
 }
 
 .login-btn:hover {
   color: #fff;
   background-color: #3c1053;
+  transform: scale(1.1);
 }
 
 .reg-btn {

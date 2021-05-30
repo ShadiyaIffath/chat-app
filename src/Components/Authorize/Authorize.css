@@ -2,6 +2,7 @@
   background-color: #3c1053ce;
   box-shadow: #cdcdcd;
   padding: 2%;
+  overflow: hidden;
 }
 
 .box {
@@ -10,6 +11,11 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
 }
 
 .h3 {
@@ -18,6 +24,7 @@
 
 .p {
   color: #bbbbbb;
+  margin-top: 15px;
 }
 
 .h1 {
@@ -45,23 +52,82 @@
   height: auto;
 }
 
+.logo-img {
+  transform: scale(1.1);
+}
+
 .logo-authorize {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  transition: 500ms linear;
 }
 
 .button {
   color: #fff;
   background-color: #3c1053;
+  transition: 500ms linear;
 }
 
 .button:hover {
   background-color: #ad538988;
   color: #3c1053;
+  transform: scale(1.1);
 }
 
 .reg-btn,
 .button {
   width: 50%;
+  transition: 500ms linear;
+}
+
+.reg-btn:hover {
+  transform: scale(1.1);
+}
+
+.fadeOut {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+}
+.fadeIn {
+  opacity: 1;
+  width: auto;
+  height: auto;
+  transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+}
+
+.sign-in {
+  animation-duration: 2s;
+  animation-name: slide-right;
+}
+
+.sign-up {
+  animation-duration: 2s;
+  animation-name: slide-left;
+}
+
+@keyframes slide-right {
+  from {
+    margin-right: 100%;
+    width: 50%;
+  }
+
+  to {
+    margin-right: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 100%;
+    width: 50%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100;
+  }
 }

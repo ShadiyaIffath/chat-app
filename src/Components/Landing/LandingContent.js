@@ -12,10 +12,26 @@ function LandingContent() {
       <img src={image} alt="logo" className="logo-img" />
       <h3 className="h3">We connect you with your friends</h3>
       <div className="row btn-row">
-        <Link className="col btn rounded-pill btn-lg login-btn" to="/signIn">
+        <Link
+          className="col btn rounded-pill btn-lg login-btn"
+          to={{
+            pathname: "/signIn",
+            state: {
+              home: true,
+            },
+          }}
+        >
           Sign in
         </Link>
-        <Link className="col btn rounded-pill btn-lg reg-btn" to="/signUp">
+        <Link
+          className="col btn rounded-pill btn-lg reg-btn"
+          to={{
+            pathname: "/signUp",
+            state: {
+              home: true,
+            },
+          }}
+        >
           Create Account
         </Link>
       </div>

@@ -1,9 +1,15 @@
 import React, { useState } from "react";
 import ParticlesComponent from "../ParticlesComponent";
 import "../Authorize/Authorize.css";
-import AuthorizeComponent from "../Authorize/AuthorizeComponent";
+import LogoComponent from "../Authorize/LogoComponent";
+import { useHistory } from "react-router";
+import { useLocation } from "react-router-dom";
 
 function SignUpComponent() {
+  const location = useLocation();
+  const { home } = location.state;
+  console.log(home);
+  const history = useHistory();
   const [regDetails, setDetails] = useState({
     username: "",
     name: "",
@@ -14,6 +20,10 @@ function SignUpComponent() {
   const submitHandler = (e) => {
     e.preventDefault();
   };
+
+  const navigationHandler = () =>
+    history.push({ pathname: "/signIn", state: { home: false } });
+
   return (
     <>
       <ParticlesComponent />
@@ -21,10 +31,14 @@ function SignUpComponent() {
         <div className="container shadow">
           <div className="row">
             <div className="col">
-              <AuthorizeComponent login={false} />
+              <LogoComponent
+                login={false}
+                navigation={navigationHandler}
+                isHome={home}
+              />
             </div>
             <div className="col">
-              <div className="card box shadow">
+              <div className={"card box shadow " + (!home ? "fadeIn" : "")}>
                 <form onSubmit={submitHandler}>
                   <div className="form-inner">
                     <h1 className="h1">SignUp</h1>

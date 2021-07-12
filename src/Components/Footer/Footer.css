@@ -1,0 +1,16 @@
+.footer {
+  height: 5%;
+  background-color: #232f3e;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-author {
+  color: aliceblue;
+  padding: 5px;
+  font-size: 13px;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}

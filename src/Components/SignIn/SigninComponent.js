@@ -15,6 +15,7 @@ function SigninComponent() {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    history.push({ pathname: "/home" });
   };
 
   const navigationHandler = () =>
